@@ -185,6 +185,7 @@
   <ItemGroup>
     <ClInclude Include="Chess.h" />
     <ClInclude Include="ChessDoc.h" />
+    <ClInclude Include="ChessPiece.h" />
     <ClInclude Include="ChessView.h" />
     <ClInclude Include="MainFrm.h" />
     <ClInclude Include="Resource.h" />
@@ -194,6 +195,7 @@
   <ItemGroup>
     <ClCompile Include="Chess.cpp" />
     <ClCompile Include="ChessDoc.cpp" />
+    <ClCompile Include="ChessPiece.cpp" />
     <ClCompile Include="ChessView.cpp" />
     <ClCompile Include="MainFrm.cpp" />
     <ClCompile Include="stdafx.cpp">
