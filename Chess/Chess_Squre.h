@@ -2,10 +2,10 @@
 #include"ChessPiece.h"
 #include"ChessBoard.h"
 
-#define	CLICKED			0b00
-#define UNCLICKED		0b01
-#define CLICKABLE		0b00
-#define UNCLICKABLE		0b01
+#define	CLICKED			0b0001
+#define UNCLICKED		0b0010
+#define CLICKABLE		0b0100
+#define UNCLICKABLE		0b1000
 
 //Chess_Squre class mean one point of Chess Board
 class Chess_Squre
