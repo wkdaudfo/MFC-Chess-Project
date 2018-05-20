@@ -1,10 +1,11 @@
 #pragma once
 #include"ChessPiece.h"
+#include"ChessBoard.h"
 
-#define	CLICKED		0b00
-#define UNCLICKED	0b01
-#define CLICKABLE	0b00
-#define UNCLICKABLE 0b01
+#define	CLICKED			0b00
+#define UNCLICKED		0b01
+#define CLICKABLE		0b00
+#define UNCLICKABLE		0b01
 
 //Chess_Squre class mean one point of Chess Board
 class Chess_Squre
@@ -15,5 +16,5 @@ class Chess_Squre
 		ChessPiece * OnPiece;
 
 	public:
-		void Click();
+		void Click(ChessBoard&);
 };
