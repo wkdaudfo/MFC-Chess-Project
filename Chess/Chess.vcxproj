@@ -184,9 +184,11 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="Chess.h" />
+    <ClInclude Include="ChessBoard.h" />
     <ClInclude Include="ChessDoc.h" />
     <ClInclude Include="ChessPiece.h" />
     <ClInclude Include="ChessView.h" />
+    <ClInclude Include="Chess_Squre.h" />
     <ClInclude Include="MainFrm.h" />
     <ClInclude Include="Resource.h" />
     <ClInclude Include="stdafx.h" />

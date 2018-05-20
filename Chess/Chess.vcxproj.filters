@@ -42,6 +42,12 @@
     <ClInclude Include="ChessPiece.h">
       <Filter>소스 파일\ChessType</Filter>
     </ClInclude>
+    <ClInclude Include="ChessBoard.h">
+      <Filter>소스 파일\ChessType</Filter>
+    </ClInclude>
+    <ClInclude Include="Chess_Squre.h">
+      <Filter>소스 파일\ChessType</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Chess.cpp">
