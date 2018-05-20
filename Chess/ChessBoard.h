@@ -16,6 +16,6 @@ class ChessBoard
 		
 		//TODO: ChessBoard function have to include board initiation	
 		ChessBoard();
-		void GetBoard(int[X][Y]);
-		void GetBoard(vector<vector<Chess_Squre>>&);
+		ChessBoard GetBoard();
+		Click(int x, int y);
 };

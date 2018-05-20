@@ -12,10 +12,21 @@
 //ChessBoard of this game
 //GameType (Solo 1 vs 1, Netword, AI)
 //Whose turn
+
+//Init(GameBoard&, GameType)
+
+//#Procedure
+//Action(x, y): Click the board of point(x, y)
+//Update() Update the user(MFC Views)'s Borad
 class Game
 {
 	private:
 		ChessBoard Board;
 		int GameType;
 		bool Turn;
+
+	public:
+		Game(ChessBoard&, int GameType);
+		void Action(int x, int y);
+		void Update();
 };
