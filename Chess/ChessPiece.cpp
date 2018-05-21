@@ -1,14 +1,39 @@
 #include "ChessPiece.h"
 
-Pawn::Pawn ()
-	: isFirstMove (true)
+ChessPiece::ChessPiece(int Color)
+{
+	this->Color = Color;
+}
+
+Pawn::Pawn(int Color) :
+	isFirstMove(true),
+	ChessPiece(Color)
 {}
 
-void Pawn::PawnMove ()
-{
-	this->isFirstMove = false;
-	return;
-}
+Rook::Rook(int Color) :
+	ChessPiece(Color)
+{}
+
+Bishop::Bishop(int Color) :
+	ChessPiece(Color)
+{}
+
+Knight::Knight(int Color) :
+	ChessPiece(Color)
+{}
+
+Queen::Queen(int Color) :
+	ChessPiece(Color)
+{}
+
+King::King(int Color) :
+	ChessPiece(Color)
+{}
+
+EmptyPiece::EmptyPiece(int Color = EMPTY) :
+	ChessPiece(Color)
+{}
+
 
 void Pawn::GetCandidate (vector<point>& p)
 {
@@ -18,6 +43,9 @@ void Pawn::GetCandidate (vector<point>& p)
 		p.push_back ({ 0,1 });
 
 		p.push_back ({ 0,2 });
+
+		p.push_back({ 1, 1 });
+		p.push_back({ -1, 1 });
 	}
 	else
 	{
@@ -69,6 +97,9 @@ void Bishop::GetCandidate (vector<point>& p)
 	{
 		p.push_back ({ i, i });
 		p.push_back ({ -i,-i });
+
+		p.push_back({ i, -i });
+		p.push_back({ -i, i });
 	}
 	return;
 }
@@ -76,22 +107,17 @@ void Bishop::GetCandidate (vector<point>& p)
 void Queen::GetCandidate (vector<point>& p)
 {
 	//	point posible;
-	for (int i = 1; i < 8; i++)
-	{
-		p.push_back ({ i, i });
-		p.push_back ({ -i,-i });
+	Bishop b(EMPTY);
+	Rook r(EMPTY);
 
-		p.push_back ({ 0,i });
-		p.push_back ({ 0,-i });
-
-		p.push_back ({ i,0 });
-		p.push_back ({ -i,0 });
-	}
+	b.GetCandidate(p);
+	r.GetCandidate(p);
 	return;
 }
 
 void King::GetCandidate (vector<point>& p)
 {
+	//TO ADD The state of castlingc
 	p.push_back ({ 0,1 });
 	p.push_back ({ 0,-1 });
 
@@ -108,5 +134,42 @@ void King::GetCandidate (vector<point>& p)
 
 void EmptyPiece::GetCandidate (vector<point>& p)
 {
+	return;
+}
+
+void Pawn::Move()
+{
+	//TODO When Pawn arives end of board
+	this->isFirstMove = false;
+	return;
+}
+
+void Rook::Move()
+{
+	//TODO
+	return;
+}
+
+void Bishop::Move()
+{
+	//TODO
+	return;
+}
+
+void Knight::Move()
+{
+	//TODO
+	return;
+}
+
+void Queen::Move()
+{
+	//TODO
+	return;
+}
+
+void King::Move()
+{
+	//TODO Check if it is the statement of check
 	return;
 }

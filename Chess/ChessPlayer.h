@@ -1,12 +1,6 @@
 #pragma once
 #include"ChessPiece.h"
 
-#define CHECK			TRUE
-#define NOTCHECK		FALSE
-
-#define WHITE			0
-#define BLACK			1
-
 //Player Information
 //Color(Black or White)
 //Dead Chess Piece
@@ -15,6 +9,6 @@ class Player
 {
 	private:
 		bool Check;
-		vector<ChessPiece> DeadPiece;
+		vector<ChessPiece> DeadPiece; //All Empty Piece
 		bool Color;
 };

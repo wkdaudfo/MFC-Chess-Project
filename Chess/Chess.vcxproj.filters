@@ -54,6 +54,12 @@
     <ClInclude Include="Game.h">
       <Filter>소스 파일\ChessType</Filter>
     </ClInclude>
+    <ClInclude Include="ChessInitFactory.h">
+      <Filter>소스 파일\ChessType</Filter>
+    </ClInclude>
+    <ClInclude Include="ChessMacro.h">
+      <Filter>소스 파일\ChessType</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Chess.cpp">
@@ -72,6 +78,15 @@
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="ChessPiece.cpp">
+      <Filter>소스 파일\ChessType</Filter>
+    </ClCompile>
+    <ClCompile Include="ChessInitFactory.cpp">
+      <Filter>소스 파일\ChessType</Filter>
+    </ClCompile>
+    <ClCompile Include="Chess_Squre.cpp">
+      <Filter>소스 파일\ChessType</Filter>
+    </ClCompile>
+    <ClCompile Include="ChessBoard.cpp">
       <Filter>소스 파일\ChessType</Filter>
     </ClCompile>
   </ItemGroup>

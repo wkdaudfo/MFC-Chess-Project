@@ -1,11 +1,9 @@
 #pragma once
 #include<vector>
 #include"Chess_Squre.h"
+#include"ChessInitFactory.h"
 
 using namespace std;
-
-#define X		8
-#define Y		8
 
 //ChessBoard implementation
 class ChessBoard 
@@ -16,6 +14,7 @@ class ChessBoard
 		
 		//TODO: ChessBoard function have to include board initiation	
 		ChessBoard();
-		ChessBoard GetBoard();
-		Click(int x, int y);
+		void GetBoard(vector<vector<Chess_Squre>>&);
+		void GetBoard(Chess_Squre[X][Y]);
+		void Click(int x, int y); //Cause Chess_Squre event
 };
