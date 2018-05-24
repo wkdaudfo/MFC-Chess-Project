@@ -20,4 +20,5 @@ class ChessBoard
 		void GetBoard(Chess_Squre[X][Y]);
 		void Click(int x, int y, int); //Cause Chess_Squre event
 		void ClearState();
+		void AllUnClick();
 };

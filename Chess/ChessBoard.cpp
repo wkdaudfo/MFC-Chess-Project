@@ -44,6 +44,8 @@ void ChessBoard::Click(int x, int y, int player_color)
 
 				Selected = &Board[x][y];
 
+				this->AllUnClick();
+
 				for (auto point : candidate)
 				{
 					if (x + point.x >= 0 && x + point.x < 8 && y + point.y >= 0 && y + point.y < 0)
@@ -111,6 +113,21 @@ void ChessBoard::ClearState()
 			{
 				Board[i][j].SetState(UNCLICKABLE);
 			}
+			else
+			{
+				Board[i][j].SetState(CLICKABLE);
+			}
+		}
+	}
+}
+
+void ChessBoard::AllUnClick()
+{
+	for (int i = 0; i < X; i++)
+	{
+		for (int j = 0; j < Y; j++)
+		{
+			Board[i][j].SetState(UNCLICKABLE);
 		}
 	}
 }
