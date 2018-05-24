@@ -21,12 +21,11 @@
 class Game
 {
 	private:
-		ChessBoard Board;
+		ChessBoard * Board;
 		int GameType;
 		bool Turn;
 
 	public:
-		Game(ChessBoard&, int GameType);
+		Game(int GameType);
 		void Action(int x, int y);
-		void Update();
 };

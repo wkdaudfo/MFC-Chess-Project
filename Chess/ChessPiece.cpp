@@ -173,3 +173,51 @@ void King::Move()
 	//TODO Check if it is the statement of check
 	return;
 }
+
+void EmptyPiece::Move()
+{
+	//TODO
+	return;
+}
+
+int Pawn::GetType(int& color)
+{
+	color = this->Color;
+	return P;
+}
+
+int Rook::GetType(int& color)
+{
+	color = this->Color;
+	return R;
+}
+
+int Knight::GetType(int& color)
+{
+	color = this->Color;
+	return KN;
+}
+
+int Bishop::GetType(int& color)
+{
+	color = this->Color;
+	return B;
+}
+
+int Queen::GetType(int& color)
+{
+	color = this->Color;
+	return Q;
+}
+
+int King::GetType(int& color)
+{
+	color = this->Color;
+	return K;
+}
+
+int EmptyPiece::GetType(int& color)
+{
+	color = EMPTY;
+	return EP;
+}

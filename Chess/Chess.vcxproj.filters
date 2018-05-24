@@ -89,6 +89,9 @@
     <ClCompile Include="ChessBoard.cpp">
       <Filter>소스 파일\ChessType</Filter>
     </ClCompile>
+    <ClCompile Include="Game.cpp">
+      <Filter>소스 파일\ChessType</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Chess.rc">

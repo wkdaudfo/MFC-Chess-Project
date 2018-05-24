@@ -1,6 +1,8 @@
 #pragma once
 #include<vector>
 
+#include "ChessMacro.h"
+
 using namespace std;
 
 struct point {
@@ -12,12 +14,13 @@ struct point {
 //Push moveable point count to argument
 class ChessPiece
 {
-	private:
+	protected:
 		int Color;
 
 	public:
 		ChessPiece(int Color);
-		virtual void GetCandidate (vector<point>&) = 0;
+		virtual void GetCandidate(vector<point>&) = 0;
+		virtual int GetType(int&) = 0;
 		/* MUST CALL THIS PROCEDURE WHEN CHESS PIECE MOVE*/
 		virtual void Move() = 0;
 };
@@ -32,6 +35,7 @@ class Pawn : public ChessPiece
 		Pawn (int Color);
 		virtual void Move();
 		virtual void GetCandidate (vector<point>&);
+		virtual int GetType(int&);
 };
 
 //Rook can move x +- (1 ~ 7) or y +- (1 ~ 7)
@@ -41,6 +45,7 @@ class Rook : public ChessPiece
 		Rook(int Color);
 		virtual void Move();
 		virtual void GetCandidate (vector<point>&);
+		virtual int GetType(int&);
 };
 
 //Knight can move (x +- 2, y +- 1) or (x +- 1, y +- 2)
@@ -50,6 +55,7 @@ class Knight : public ChessPiece
 		Knight(int Color);
 		virtual void Move();
 		virtual void GetCandidate (vector<point>&);
+		virtual int GetType(int&);
 };
 
 //Bishop can move (x, y +- 7)
@@ -59,6 +65,7 @@ class Bishop : public ChessPiece
 		Bishop(int Color);
 		virtual void Move();
 		virtual void GetCandidate (vector<point>&);
+		virtual int GetType(int&);
 };
 
 //Queen can move Bishop + Rook
@@ -68,6 +75,7 @@ class Queen : public ChessPiece
 		Queen(int Color);
 		virtual void Move();
 		virtual void GetCandidate (vector<point>&);
+		virtual int GetType(int&);
 };
 
 //King can move (x +- 1) or (y +- 1) or (x +- 1, y +- 1)
@@ -77,6 +85,7 @@ class King : public ChessPiece
 		King(int Color);
 		virtual void Move();
 		virtual void GetCandidate (vector<point>&);
+		virtual int GetType(int&);
 };
 
 //EmptyPiece only can move by action
@@ -86,4 +95,5 @@ class EmptyPiece : public ChessPiece
 		EmptyPiece(int Color = EMPTY);
 		virtual void Move();
 		virtual void GetCandidate (vector<point>&);
+		virtual int GetType(int&);
 };

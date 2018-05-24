@@ -9,8 +9,13 @@ class Chess_Squre
 	private:
 		int State;
 		ChessPiece * OnPiece;
-
+		
 	public:
 		Chess_Squre(ChessPiece*, int State);
-		void Click(ChessBoard&);
+		int Click(vector<point>&);
+		ChessPiece * Click(void*);
+		int GetState();
+		int GetPiece(ChessPiece*, int&);
+		void SetPiece(ChessPiece *);
+		void SetState(int State);
 };
