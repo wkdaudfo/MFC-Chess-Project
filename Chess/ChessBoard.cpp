@@ -40,7 +40,11 @@ void ChessBoard::Click(int x, int y, int player_color)
 			if (piece_color == player_color)
 			{
 				vector<point> candidate;
-				Board[x][y].Click(candidate);
+				int Straight;
+				int th;
+
+				Board[x][y].Click(candidate, Straight);
+				int PieceType = Board[x][y].GetPiece(nullptr, th);
 
 				Selected = &Board[x][y];
 
@@ -48,9 +52,67 @@ void ChessBoard::Click(int x, int y, int player_color)
 
 				for (auto point : candidate)
 				{
-					if (x + point.x >= 0 && x + point.x < 8 && y + point.y >= 0 && y + point.y < 0)
+					if (PieceType != P)
 					{
-						Board[x + point.x][y + point.y].SetState(CLICKABLE);
+						for (int i = 1; i <= Straight; i++)
+						{
+							int PieceColor;
+
+							if (x + point.x * i < 0 || x + point.x * i > X || y + point.y * i < 0 || y + point.y * i > Y)
+								break;
+
+							Board[x + point.x * i][y + point.y * i].GetPiece(nullptr, PieceColor);
+
+							if (PieceColor == EMPTY)
+							{
+								Board[x + point.x*i][y + point.y*i].SetState(CLICKABLE);
+								continue;
+							}
+
+							else if (PieceColor != player_color)
+							{
+								Board[x + point.x*i][y + point.y*i].SetState(CLICKABLE);
+								break;
+							}
+
+							else
+								break;
+						}
+					}
+
+					else
+					{
+						int BWP = 1;
+						int PieceColor;
+						if (player_color == BLACK)
+							BWP = -1;
+
+						for (int i = 1; i <= Straight; i++)
+						{
+							if (x + point.x * i * BWP < 0 || x + point.x * i * BWP > X || y + point.y * i * BWP < 0 || y + point.y * i * BWP > Y)
+								break;
+
+							Board[x + point.x * i * BWP][y + point.y * i * BWP].GetPiece(nullptr, PieceColor);
+
+							if (PieceColor == EMPTY)
+							{
+								Board[x + point.x * i * BWP][y + point.y * i * BWP].SetState(CLICKABLE);
+								continue;
+							}
+
+							else
+								break;
+						}
+
+						Board[x + 1][y + BWP].GetPiece(nullptr, PieceColor);
+
+						if (PieceColor != EMPTY && PieceColor != player_color)
+							Board[x + 1][y + BWP].SetState(CLICKABLE);
+
+						Board[x - 1][y + BWP].GetPiece(nullptr, PieceColor);
+
+						if (PieceColor != EMPTY && PieceColor != player_color)
+							Board[x - 1][y + BWP].SetState(CLICKABLE);
 					}
 				}
 			}

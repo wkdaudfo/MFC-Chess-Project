@@ -6,12 +6,9 @@ Chess_Squre::Chess_Squre(ChessPiece* Piece, int State)
 	this->State = State;
 }
 
-int Chess_Squre::Click(vector<point>& Candidate)
+int Chess_Squre::Click(vector<point>& Candidate, int& Straight)
 {
-	switch (this->State) 
-	{
-		OnPiece->GetCandidate(Candidate);
-	}
+	OnPiece->GetCandidate(Candidate, Straight);
 }
 
 ChessPiece * Chess_Squre::Click(void*)

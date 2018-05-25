@@ -12,7 +12,7 @@ class Chess_Squre
 		
 	public:
 		Chess_Squre(ChessPiece*, int State);
-		int Click(vector<point>&);
+		int Click(vector<point>&, int&);
 		ChessPiece * Click(void*);
 		int GetState();
 		int GetPiece(ChessPiece*, int&);

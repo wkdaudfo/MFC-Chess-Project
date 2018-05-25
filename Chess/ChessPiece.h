@@ -16,10 +16,11 @@ class ChessPiece
 {
 	protected:
 		int Color;
+		int Straight;
 
 	public:
 		ChessPiece(int Color);
-		virtual void GetCandidate(vector<point>&) = 0;
+		virtual void GetCandidate(vector<point>&, int&) = 0;
 		virtual int GetType(int&) = 0;
 		/* MUST CALL THIS PROCEDURE WHEN CHESS PIECE MOVE*/
 		virtual void Move() = 0;
@@ -34,7 +35,7 @@ class Pawn : public ChessPiece
 	public:
 		Pawn (int Color);
 		virtual void Move();
-		virtual void GetCandidate (vector<point>&);
+		virtual void GetCandidate (vector<point>&, int&);
 		virtual int GetType(int&);
 };
 
@@ -44,7 +45,7 @@ class Rook : public ChessPiece
 	public:
 		Rook(int Color);
 		virtual void Move();
-		virtual void GetCandidate (vector<point>&);
+		virtual void GetCandidate (vector<point>&, int&);
 		virtual int GetType(int&);
 };
 
@@ -54,7 +55,7 @@ class Knight : public ChessPiece
 	public:
 		Knight(int Color);
 		virtual void Move();
-		virtual void GetCandidate (vector<point>&);
+		virtual void GetCandidate (vector<point>&, int&);
 		virtual int GetType(int&);
 };
 
@@ -64,7 +65,7 @@ class Bishop : public ChessPiece
 	public:
 		Bishop(int Color);
 		virtual void Move();
-		virtual void GetCandidate (vector<point>&);
+		virtual void GetCandidate (vector<point>&, int&);
 		virtual int GetType(int&);
 };
 
@@ -74,7 +75,7 @@ class Queen : public ChessPiece
 	public:
 		Queen(int Color);
 		virtual void Move();
-		virtual void GetCandidate (vector<point>&);
+		virtual void GetCandidate (vector<point>&, int&);
 		virtual int GetType(int&);
 };
 
@@ -84,7 +85,7 @@ class King : public ChessPiece
 	public:
 		King(int Color);
 		virtual void Move();
-		virtual void GetCandidate (vector<point>&);
+		virtual void GetCandidate (vector<point>&, int&);
 		virtual int GetType(int&);
 };
 
@@ -94,6 +95,6 @@ class EmptyPiece : public ChessPiece
 	public:
 		EmptyPiece(int Color = EMPTY);
 		virtual void Move();
-		virtual void GetCandidate (vector<point>&);
+		virtual void GetCandidate (vector<point>&, int&);
 		virtual int GetType(int&);
 };

@@ -8,57 +8,55 @@ ChessPiece::ChessPiece(int Color)
 Pawn::Pawn(int Color) :
 	isFirstMove(true),
 	ChessPiece(Color)
-{}
+{
+	this->Straight = 2;
+}
 
 Rook::Rook(int Color) :
 	ChessPiece(Color)
-{}
+{
+	this->Straight = 8;
+}
 
 Bishop::Bishop(int Color) :
 	ChessPiece(Color)
-{}
+{
+	this->Straight = 8;
+}
 
 Knight::Knight(int Color) :
 	ChessPiece(Color)
-{}
+{
+	this->Straight = 1;
+}
 
 Queen::Queen(int Color) :
 	ChessPiece(Color)
-{}
+{
+	this->Straight = 8;
+}
 
 King::King(int Color) :
 	ChessPiece(Color)
-{}
+{
+	this->Straight = 1;
+}
 
 EmptyPiece::EmptyPiece(int Color = EMPTY) :
 	ChessPiece(Color)
 {}
 
 
-void Pawn::GetCandidate (vector<point>& p)
+void Pawn::GetCandidate (vector<point>& p, int& Straight)
 {
 
-	if (this->isFirstMove) // 폰이 처음 움직일 때
-	{
-		p.push_back ({ 0,1 });
+	p.push_back({ 0, 1 });
 
-		p.push_back ({ 0,2 });
-
-		p.push_back({ 1, 1 });
-		p.push_back({ -1, 1 });
-	}
-	else
-	{
-		p.push_back ({ 0,1 });
-
-		p.push_back ({ 1,1 });
-
-		p.push_back ({ -1,1 });
-	}
+	//대각선에 적이 있을 시 예외처리
 	return;
 }
 
-void Knight::GetCandidate (vector<point> &p)
+void Knight::GetCandidate (vector<point> &p, int& Straight)
 {
 	p.push_back ({ 1,2 });
 	p.push_back ({ -1,2 });
@@ -72,67 +70,55 @@ void Knight::GetCandidate (vector<point> &p)
 	p.push_back ({ 2,-1 });
 	p.push_back ({ -2,-1 });
 
+	//얘는 그대로
+
 	return;
 }
 
-void Rook::GetCandidate (vector<point>& p)
+void Rook::GetCandidate (vector<point>& p, int& Straight)
 {
-	for (int i = 1; i < 8; i++)
-	{
-		p.push_back ({ 0,i });
-		p.push_back ({ 0,-i });
-	}
-
-	for (int i = 1; i < 8; i++)
-	{
-		p.push_back ({ i,0 });
-		p.push_back ({ -i,0 });
-	}
+	p.push_back({ 0, 1 });
+	p.push_back({ 0, -1 });
+	
+	p.push_back({ 1, 0 });
+	p.push_back({ -1, 0 });
 	return;
 }
 
-void Bishop::GetCandidate (vector<point>& p)
+void Bishop::GetCandidate (vector<point>& p, int& Straight)
 {
-	for (int i = 1; i < 8; i++)
-	{
-		p.push_back ({ i, i });
-		p.push_back ({ -i,-i });
+	p.push_back({ 1, 1 });
+	p.push_back({ -1, -1 });
 
-		p.push_back({ i, -i });
-		p.push_back({ -i, i });
-	}
+	p.push_back({ 1, -1 });
+	p.push_back({ -1, 1 });
 	return;
 }
 
-void Queen::GetCandidate (vector<point>& p)
+void Queen::GetCandidate (vector<point>& p, int& Straight)
 {
 	//	point posible;
+	int temp;
 	Bishop b(EMPTY);
 	Rook r(EMPTY);
 
-	b.GetCandidate(p);
-	r.GetCandidate(p);
+	b.GetCandidate(p, temp);
+	r.GetCandidate(p, temp);
 	return;
 }
 
-void King::GetCandidate (vector<point>& p)
+void King::GetCandidate (vector<point>& p, int& Straight)
 {
 	//TO ADD The state of castlingc
-	p.push_back ({ 0,1 });
-	p.push_back ({ 0,-1 });
+	int temp;
+	Queen q(EMPTY);
 
-	p.push_back ({ 1,0 });
-	p.push_back ({ -1,0 });
-
-	p.push_back ({ 1,1 });
-	p.push_back ({ -1,-1 });
-	p.push_back ({ 1,-1 });
-	p.push_back ({ -1,1 });
+	q.GetCandidate(p, temp);
 
 	return;
 }
 
-void EmptyPiece::GetCandidate (vector<point>& p)
+void EmptyPiece::GetCandidate (vector<point>& p, int& Straight)
 {
 	return;
 }
@@ -141,6 +127,7 @@ void Pawn::Move()
 {
 	//TODO When Pawn arives end of board
 	this->isFirstMove = false;
+	this->Straight = 1;
 	return;
 }
 
