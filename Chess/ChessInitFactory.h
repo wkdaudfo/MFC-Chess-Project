@@ -2,16 +2,18 @@
 #include "ChessBoard.h"
 #include "ChessMacro.h"
 
+class Chess_Squre;
+
 const int Board_Color[X][Y] =
 {
-	{B, B, B, B, B, B ,B, B},
-	{B, B, B, B, B, B, B, B},
+	{BLACK, BLACK, BLACK, BLACK, BLACK, BLACK ,BLACK, BLACK},
+	{BLACK, BLACK, BLACK, BLACK, BLACK, BLACK, BLACK, BLACK},
 	{E, E, E, E, E, E, E, E},
 	{E, E, E, E, E, E, E, E},
 	{E, E, E, E, E, E, E, E},
 	{E, E, E, E, E, E, E, E},
-	{W, W, W, W, W, W, W, W},
-	{W, W, W, W, W, W, W, W}
+	{WHITE, WHITE, WHITE, WHITE, WHITE, WHITE, WHITE, WHITE},
+	{WHITE, WHITE, WHITE, WHITE, WHITE, WHITE, WHITE, WHITE}
 };
 
 const int Board_Piece[X][Y] =

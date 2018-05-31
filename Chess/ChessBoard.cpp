@@ -1,3 +1,5 @@
+
+
 #include "ChessBoard.h"
 
 ChessBoard::ChessBoard()
@@ -33,7 +35,7 @@ void ChessBoard::Click(int x, int y, int player_color)
 {
 	if (Selected == nullptr)
 	{
-		if (Board[x][y].GetState == CLICKABLE)
+		if (Board[x][y].GetState() == CLICKABLE)
 		{
 			int piece_color;
 			Board[x][y].GetPiece(nullptr, piece_color);
@@ -79,7 +81,6 @@ void ChessBoard::Click(int x, int y, int player_color)
 								break;
 						}
 					}
-
 					else
 					{
 						int BWP = 1;
@@ -121,7 +122,7 @@ void ChessBoard::Click(int x, int y, int player_color)
 
 	else
 	{
-		if (Board[x][y].GetState == UNCLICKABLE)
+		if (Board[x][y].GetState() == UNCLICKABLE)
 		{
 			Selected = nullptr;
 			this->ClearState();
@@ -129,13 +130,13 @@ void ChessBoard::Click(int x, int y, int player_color)
 
 		else
 		{
-			ChessPiece * second;
+			ChessPiece * second = nullptr;
 			int PickColor;
 			int SelectedColor;
 
 			int type = Board[x][y].GetPiece(second, PickColor);
 
-			ChessPiece * first;
+			ChessPiece * first = nullptr;
 			Selected->GetPiece(first, SelectedColor);
 
 			if (type == EP)
@@ -148,7 +149,7 @@ void ChessBoard::Click(int x, int y, int player_color)
 			else if(PickColor != SelectedColor)
 			{
 				Board[x][y].SetPiece(first);
-				Selected->SetPiece(new EmptyPiece());
+				Selected->SetPiece(new EmptyPiece(EMPTY));
 			}
 
 			else

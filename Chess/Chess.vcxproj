@@ -88,7 +88,7 @@
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
-      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
@@ -219,6 +219,9 @@
     <ResourceCompile Include="Chess.rc" />
   </ItemGroup>
   <ItemGroup>
+    <Image Include="C:\Users\조나단\Desktop\board-157165_1280.png" />
+    <Image Include="C:\Users\조나단\Desktop\pumpkin-190123_640.png" />
+    <Image Include="C:\Users\조나단\Desktop\wolf2.bmp" />
     <Image Include="res\Chess.ico" />
     <Image Include="res\ChessDoc.ico" />
     <Image Include="res\Toolbar.bmp" />

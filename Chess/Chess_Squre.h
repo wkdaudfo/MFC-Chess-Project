@@ -11,7 +11,9 @@ class Chess_Squre
 		ChessPiece * OnPiece;
 		
 	public:
+		Chess_Squre() {}
 		Chess_Squre(ChessPiece*, int State);
+		~Chess_Squre() {}
 		int Click(vector<point>&, int&);
 		ChessPiece * Click(void*);
 		int GetState();

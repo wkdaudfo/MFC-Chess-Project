@@ -42,7 +42,7 @@ King::King(int Color) :
 	this->Straight = 1;
 }
 
-EmptyPiece::EmptyPiece(int Color = EMPTY) :
+ EmptyPiece::EmptyPiece(int Color) :
 	ChessPiece(Color)
 {}
 

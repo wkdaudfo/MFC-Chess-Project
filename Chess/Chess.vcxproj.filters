@@ -39,26 +39,26 @@
     <ClInclude Include="Resource.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="ChessPiece.h">
-      <Filter>소스 파일\ChessType</Filter>
-    </ClInclude>
-    <ClInclude Include="ChessBoard.h">
-      <Filter>소스 파일\ChessType</Filter>
-    </ClInclude>
-    <ClInclude Include="Chess_Squre.h">
-      <Filter>소스 파일\ChessType</Filter>
+    <ClInclude Include="Game.h">
+      <Filter>헤더 파일</Filter>
     </ClInclude>
     <ClInclude Include="ChessPlayer.h">
-      <Filter>소스 파일\ChessType</Filter>
+      <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="Game.h">
-      <Filter>소스 파일\ChessType</Filter>
-    </ClInclude>
-    <ClInclude Include="ChessInitFactory.h">
-      <Filter>소스 파일\ChessType</Filter>
+    <ClInclude Include="ChessPiece.h">
+      <Filter>헤더 파일</Filter>
     </ClInclude>
     <ClInclude Include="ChessMacro.h">
-      <Filter>소스 파일\ChessType</Filter>
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="ChessInitFactory.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="ChessBoard.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Chess_Squre.h">
+      <Filter>헤더 파일</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -112,6 +112,15 @@
       <Filter>리소스 파일</Filter>
     </Image>
     <Image Include="res\Toolbar256.bmp">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="C:\Users\조나단\Desktop\board-157165_1280.png">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="C:\Users\조나단\Desktop\pumpkin-190123_640.png">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="C:\Users\조나단\Desktop\wolf2.bmp">
       <Filter>리소스 파일</Filter>
     </Image>
   </ItemGroup>

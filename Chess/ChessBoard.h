@@ -5,6 +5,8 @@
 
 using namespace std;
 
+class Chess_Squre;
+
 //ChessBoard implementation
 class ChessBoard 
 {

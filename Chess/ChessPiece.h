@@ -3,6 +3,8 @@
 
 #include "ChessMacro.h"
 
+class Chess_Squre;
+
 using namespace std;
 
 struct point {
@@ -93,7 +95,7 @@ class King : public ChessPiece
 class EmptyPiece : public ChessPiece
 {
 	public:
-		EmptyPiece(int Color = EMPTY);
+		EmptyPiece(int Color);
 		virtual void Move();
 		virtual void GetCandidate (vector<point>&, int&);
 		virtual int GetType(int&);

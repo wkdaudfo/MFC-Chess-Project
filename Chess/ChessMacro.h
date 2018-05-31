@@ -18,9 +18,6 @@
 //Empty
 #define E						EMPTY
 
-#define W						WHITE
-#define B						BLACK
-
 //Chess Piece
 #define P						0
 #define R						1

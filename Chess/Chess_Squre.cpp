@@ -1,4 +1,10 @@
+//#include "stdafx.h"
 #include "Chess_Squre.h"
+
+/*
+Chess_Squre::Chess_Squre()
+{}
+*/
 
 Chess_Squre::Chess_Squre(ChessPiece* Piece, int State)
 {
@@ -9,6 +15,7 @@ Chess_Squre::Chess_Squre(ChessPiece* Piece, int State)
 int Chess_Squre::Click(vector<point>& Candidate, int& Straight)
 {
 	OnPiece->GetCandidate(Candidate, Straight);
+	return true;
 }
 
 ChessPiece * Chess_Squre::Click(void*)
